@@ -1,4 +1,4 @@
-
+require('dotenv.js').config();
 const { Client, Collection, Events, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions } = require('discord.js');
 const client = new Client({
   intents: [
