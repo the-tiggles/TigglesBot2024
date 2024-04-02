@@ -9,9 +9,19 @@ const client = new Client({
 });
 
 client.once(Events.ClientReady, readyClient => {
-    console.log('Bot is ready!');
+    console.log('✅ Bot is ready!');
     console.log(`${readyClient.user.tag}`);
-    client.user.setActivity('Just Tiggin arround');
+    client.user.setActivity('love games');
 });
 
+client.on('messageCreate', (message) => {
+  console.log(`${message.content}`);
+  if (message.author.bot) return;
+  if (message.content === 'ping') {
+    message.reply('pong');
+  }
+  if (message.content === 'hello') {
+    message.reply('hello :)');
+  }
+});
 client.login(process.env.ClientToken);
