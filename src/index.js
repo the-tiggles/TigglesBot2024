@@ -32,7 +32,7 @@ var fs = require('fs');
 bot.once(Events.ClientReady, readyClient => {
     console.log('✅ Bot is ready!');
     console.log(`${readyClient.user.tag}`);
-    client.user.setActivity('love games');
+    bot.user.setActivity('love games');
 });
 
 bot.on('messageCreate', (message) => {
