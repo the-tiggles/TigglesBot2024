@@ -1,0 +1,25 @@
+name: 'Test'
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches: 
+      - main
+  workflow_dispatch:
+  
+jobs:
+  display:
+    runs-on: ubuntu-latest
+    env:
+      ClientToken: ${{ secrets.TOKEN }}
+
+  test: 
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ./
+        with: 
+          TOKEN: ${{ secrets.TOKEN }}

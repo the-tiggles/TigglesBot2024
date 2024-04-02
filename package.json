@@ -2,15 +2,18 @@
   "name": "tigglesbot2024",
   "version": "1.0.0",
   "description": "A personal bot for Discord",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node src/index.js"
+    "build": "ncc build src/action.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@vercel/ncc": "^0.38.1",
     "discord.js": "^14.14.1",
     "nodemon": "^3.1.0"
   },

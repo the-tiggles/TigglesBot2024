@@ -7,6 +7,7 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,
   ],
 });
+const core = require('@actions/core');
 
 client.once(Events.ClientReady, readyClient => {
     console.log('✅ Bot is ready!');
@@ -24,4 +25,8 @@ client.on('messageCreate', (message) => {
     message.reply('hello :)');
   }
 });
-client.login(process.env.TOKEN);
+
+
+// client.login(process.env.TOKEN);
+
+client.login(`${core.getInput('TOKEN')}`);
