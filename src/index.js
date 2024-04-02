@@ -9,25 +9,24 @@ const bot = new Client({
 });
 var fs = require('fs');
 
-bot.commands = bot.Collection();
+// bot.commands = bot.Collection();
 
-fs.readdir('./commands/', (err, files) => {
-if (err) console.log(err);
-// 'f' is for file
-let jsfile = files.filter(f => f.split('.').pop() === 'js');
-if (jsfile.length <= 0) {
-  console.log('could not find commands');
-  return;
-}
-console.group('commands');
-jsfile.forEach((f, i) => {
-  let props = require(`./commands/${f}`);
-  console.log(`${f}`);
-  bot.commands.set(props.help.name, props);
-});
-console.groupEnd();
-});
-
+// fs.readdir('./commands/', (err, files) => {
+// if (err) console.log(err);
+// // 'f' is for file
+// let jsfile = files.filter(f => f.split('.').pop() === 'js');
+// if (jsfile.length <= 0) {
+//   console.log('could not find commands');
+//   return;
+// }
+// console.group('commands');
+// jsfile.forEach((f, i) => {
+//   let props = require(`./commands/${f}`);
+//   console.log(`${f}`);
+//   bot.commands.set(props.help.name, props);
+// });
+// console.groupEnd();
+// });
 
 
 bot.once(Events.ClientReady, readyClient => {
