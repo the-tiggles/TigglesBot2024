@@ -2,9 +2,9 @@
   "name": "tigglesbot2024",
   "version": "1.0.0",
   "description": "A personal bot for Discord",
-  "main": "dist/bot.js",
+  "main": "src/bot.js",
   "scripts": {
-    "build": "ncc build src/bot.js -o dist"
+    "build": "node ."
   },
   "keywords": [],
   "author": "",
