@@ -8,6 +8,7 @@ const client = new Client({
   ],
 });
 const core = require('@actions/core');
+const theToken = core.getInput('TOKEN');
 
 client.once(Events.ClientReady, readyClient => {
     console.log('✅ Bot is ready!');
@@ -29,4 +30,4 @@ client.on('messageCreate', (message) => {
 
 // client.login(process.env.TOKEN);
 
-client.login(`'${process.env.TOKEN}'`);
+client.login(theToken);
