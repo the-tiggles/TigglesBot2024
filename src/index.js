@@ -1,5 +1,5 @@
 const { Client, Events, IntentsBitField, EmbedBuilder, PermissionsBitField, Permissions } = require('discord.js');
-const client = new Client({
+const bot = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
     IntentsBitField.Flags.GuildMembers,
@@ -7,16 +7,36 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,
   ],
 });
-const core = require('@actions/core');
-const theToken = core.getInput('TOKEN');
+var fs = require('fs');
 
-client.once(Events.ClientReady, readyClient => {
+bot.commands = bot.Collection();
+
+fs.readdir('./commands/', (err, files) => {
+if (err) console.log(err);
+// 'f' is for file
+let jsfile = files.filter(f => f.split('.').pop() === 'js');
+if (jsfile.length <= 0) {
+  console.log('could not find commands');
+  return;
+}
+console.group('commands');
+jsfile.forEach((f, i) => {
+  let props = require(`./commands/${f}`);
+  console.log(`${f}`);
+  bot.commands.set(props.help.name, props);
+});
+console.groupEnd();
+});
+
+
+
+bot.once(Events.ClientReady, readyClient => {
     console.log('✅ Bot is ready!');
     console.log(`${readyClient.user.tag}`);
     client.user.setActivity('love games');
 });
 
-client.on('messageCreate', (message) => {
+bot.on('messageCreate', (message) => {
   console.log(`${message.content}`);
   if (message.author.bot) return;
   if (message.content === 'ping') {
@@ -30,4 +50,5 @@ client.on('messageCreate', (message) => {
 
 // client.login(process.env.TOKEN);
 
-client.login(process.env.ClientToken);
+// Set with Koyeb Secrets
+bot.login(process.env.ClientToken);

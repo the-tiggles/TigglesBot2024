@@ -30,7 +30,4 @@ jobs:
         run: npm ci
         
       - run: npm run build
-        env: 
-          TOKEN: ${{ secrets.TOKEN }}
-          CI: true
 
