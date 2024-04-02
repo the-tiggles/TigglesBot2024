@@ -11,11 +11,6 @@ on:
   workflow_dispatch:
   
 jobs:
-  display:
-    runs-on: ubuntu-latest
-    env:
-      ClientToken: ${{ secrets.TOKEN }}
-
   test: 
     runs-on: ubuntu-latest
     steps: 
