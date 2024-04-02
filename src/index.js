@@ -24,4 +24,4 @@ client.on('messageCreate', (message) => {
     message.reply('hello :)');
   }
 });
-client.login(process.env.ClientToken);
+client.login(process.env.TOKEN);
