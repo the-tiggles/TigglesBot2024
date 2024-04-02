@@ -2,10 +2,10 @@
 const { Client, Collection, Events, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions } = require('discord.js');
 const client = new Client({
   intents: [
-    GatewayIntentBits.Flags.Guilds,
-    GatewayIntentBits.Flags.GuildMembers,
-    GatewayIntentBits.Flags.GuildMessages,
-    GatewayIntentBits.Flags.MessageContent,
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
   ],
 });
 
