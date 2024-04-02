@@ -4,7 +4,7 @@
   "description": "A personal bot for Discord",
   "main": "src/bot.js",
   "scripts": {
-    "test": "node ."
+    "test": "npm run build"
   },
   "keywords": [],
   "author": "",
