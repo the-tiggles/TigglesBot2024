@@ -1,5 +1,12 @@
-const { Client, Events, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const { Client, Events, IntentsBitField, EmbedBuilder, PermissionsBitField, Permissions } = require('discord.js');
+const client = new Client({
+  intents: [
+    IntentsBitField.Flags.Guilds,
+    IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.MessageContent,
+  ],
+});
 
 client.once(Events.ClientReady, readyClient => {
     console.log('Bot is ready!');
@@ -7,4 +14,4 @@ client.once(Events.ClientReady, readyClient => {
     client.user.setActivity('Just Tiggin arround');
 });
 
-client.login(process.env.ClientSecret);
+client.login(process.env.ClientToken);
