@@ -52,16 +52,16 @@ client.once(Events.ClientReady, readyClient => {
     client.user.setActivity('love games');
 });
 
-client.on('messageCreate', (message) => {
-  console.log(`${message.content}`);
-  if (message.author.bot) return;
-  if (message.content === 'ping') {
-    message.reply('pong');
-  }
-  if (message.content === 'hello') {
-    message.reply('hello :)');
-  }
-});
+// client.on('messageCreate', (message) => {
+//   console.log(`${message.content}`);
+//   if (message.author.bot) return;
+//   if (message.content === 'ping') {
+//     message.reply('pong');
+//   }
+//   if (message.content === 'hello') {
+//     message.reply('hello :)');
+//   }
+// });
 
 
 // client.login(process.env.TOKEN);
