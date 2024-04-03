@@ -9,11 +9,12 @@ module.exports = {
 
       try {
         await command.execute(interaction, client);
-      } catch (error) {
+      }
+      catch (error) {
         console.error(error);
         await interaction.reply({
-          content: `Something went wrong while executing this command...`,
-          ephemeral: true
+          content: 'Something went wrong while executing this command...',
+          ephemeral: true,
         });
       }
     }
