@@ -12,9 +12,9 @@ module.exports = {
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
         .setAuthor({
-            url: `https://github.com/the-tiggles/TigglesBot2024`,
+            url: 'https://github.com/the-tiggles/TigglesBot2024',
             iconURL: interaction.user.displayAvatarURL(),
-            name: interaction.user.tag
+            name: interaction.user.tag,
         })
         .setFooter({
             iconURL: client.user.displayAvatarURL(),
@@ -24,15 +24,15 @@ module.exports = {
         .setURL('https://github.com/the-tiggles/TigglesBot2024')
         .addFields([
             {
-                name: `Field 1`,
-                value: `Field Value 1`,
+                name: 'Field 1',
+                value: 'Field Value 1',
                 inline: true,
             },
             {
-                name: `Field 2`,
-                value: `Field Value 2`,
+                name: 'Field 2',
+                value: 'Field Value 2',
                 inline: true,
-            }
+            },
         ]);
         await interaction.reply({
             embeds: [embed],
