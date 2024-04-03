@@ -6,11 +6,11 @@ module.exports = {
     .setName('cute')
     .setDescription('show me the cuteness!'),
     async execute(interaction) {
-        const result = await redditParse.randomPost('cats');
+        const result = redditParse.randomPost('cats');
         let resultObject;
         do {
             resultObject = JSON.parse(result);
-        } while (resultObject.type != 'image')
+        } while (resultObject.type != 'image');
         console.log(resultObject);
         const kittenEmbed = new EmbedBuilder()
             .setTitle(resultObject.title)
