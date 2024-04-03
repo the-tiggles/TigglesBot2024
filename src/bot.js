@@ -1,7 +1,14 @@
 const { Client, Events, Collection, GatewayIntentBits } = require('discord.js');
 const fs = require('fs');
 
-const client = new Client({ intents: GatewayIntentBits.Guilds });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+  ],
+});
 client.commands = new Collection();
 client.commandArray = [];
 
@@ -36,7 +43,7 @@ client.on('messageCreate', (message) => {
 });
 
 
-// client.login(process.env.TOKEN);
-
 // Set with Koyeb Secrets
+// client.login(process.env.ClientToken);
+
 client.login(process.env.ClientToken);
