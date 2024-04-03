@@ -49,7 +49,7 @@ client.handleCommands();
 client.once(Events.ClientReady, readyClient => {
     console.log('✅ Bot is ready!');
     console.log(`${readyClient.user.tag}`);
-    client.user.setActivity('thug stuff');
+    client.user.setActivity('thug stuff 2');
 });
 
 // client.on('messageCreate', (message) => {
