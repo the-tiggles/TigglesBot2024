@@ -25,7 +25,7 @@ module.exports = (client) => {
 
       await rest.put(
         Routes.applicationCommands(clientId),
-        { body: client.commandArray }
+        { body: client.commandArray },
       );
 
       console.log('Successfully reloaded application (/) commands.');
