@@ -2,6 +2,7 @@ module.exports = {
   name: 'ready',
   once: true,
   async execute(client) {
-    console.log(`Ready!!! ${client.user.tag} is logged in and online.`);
+    console.log(`✅ Bot is ready! ${client.user.tag} is logged in and online.`);
+    client.user.setActivity('the thuggest');
   },
 };
