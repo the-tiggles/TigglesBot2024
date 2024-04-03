@@ -7,7 +7,7 @@ module.exports = {
       const embed = new EmbedBuilder()
         .setTitle('This is a new EmbED!')
         .setDescription('This is a unique description')
-        .setColor('0x9803fc')
+        .setColor(0x9803fc)
         .setImage(client.user.displayAvatarURL())
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
