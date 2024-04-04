@@ -28,23 +28,16 @@ for (const folder of functionFolders) {
 client.handleEvents();
 client.handleCommands();
 
-
-// client.once(Events.ClientReady, readyClient => {
-//     console.log('✅ Bot is ready!');
-//     console.log(`${readyClient.user.tag}`);
-//     client.user.setActivity('thug stuff 3');
+// client.on('messageCreate', (message) => {
+//   console.log(`${message.content}`);
+//   if (message.author.bot) return;
+//   if (message.content === 'ping') {
+//     message.reply('pong');
+//   }
+//   if (message.content === 'hello') {
+//     message.reply('hello :)');
+//   }
 // });
-
-client.on('messageCreate', (message) => {
-  console.log(`${message.content}`);
-  if (message.author.bot) return;
-  if (message.content === 'ping') {
-    message.reply('pong');
-  }
-  if (message.content === 'hello') {
-    message.reply('hello :)');
-  }
-});
 
 
 // Set with Koyeb Secrets
