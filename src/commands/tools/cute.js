@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 // const {getImage} = require('random-reddit');
-// const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+// const fetch = require('node-fetch');
 
 
 module.exports = {
