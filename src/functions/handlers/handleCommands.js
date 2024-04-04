@@ -2,6 +2,8 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v10');
 const fs = require('fs');
 
+const theToken = process.env.ClientToken;
+
 module.exports = (client) => {
   client.handleCommands = async () => {
     const commandFolders = fs.readdirSync('./src/commands');
@@ -20,7 +22,7 @@ module.exports = (client) => {
     }
     const clientId = '464785300221329418';
     const guildId = '333412513385545728';
-    const rest = new REST({ version: '10' }).setToken(process.env.ClientToken);
+    const rest = new REST({ version: '10' }).setToken(theToken);
 
 
     try {

@@ -1,6 +1,9 @@
 const { Client, Events, Collection, GatewayIntentBits } = require('discord.js');
 const fs = require('fs');
 
+
+const theToken = process.env.ClientToken;
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -9,6 +12,7 @@ const client = new Client({
     GatewayIntentBits.GuildMembers,
   ],
 });
+
 client.commands = new Collection();
 client.commandArray = [];
 
@@ -46,4 +50,6 @@ client.on('messageCreate', (message) => {
 // Set with Koyeb Secrets
 // client.login(process.env.ClientToken);
 
-client.login(process.env.ClientToken);
+// client.login(process.env.ClientToken);
+
+client.login(theToken);
